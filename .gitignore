@@ -2,3 +2,6 @@
 .metadata/
 .jxbrowser-data/
 dvt/
+*.d
+*.mk
+RemoteSystemsTempFiles/.project
