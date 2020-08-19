@@ -1,0 +1,1 @@
+"./main.obj" "./displays/led_display.obj" "./displays/simple_display_mux.obj" "../lnk_msp430f2132.cmd" -llibc.a 

@@ -1,0 +1,1 @@
+"./01_main_simple_blink.obj" "./displays/led_display.obj" "./displays/simple_display_mux.obj" "../lnk_msp430g2553.cmd" -llibc.a 

@@ -1,0 +1,1 @@
+"./lcd.obj" "./main.obj" "./relogio.obj" "../lnk_msp430f2132.cmd" -llibc.a 
