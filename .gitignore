@@ -5,3 +5,5 @@ dvt/
 *.d
 *.mk
 RemoteSystemsTempFiles/.project
+*.workspace
+*.pdsbak

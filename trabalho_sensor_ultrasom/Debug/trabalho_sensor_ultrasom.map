@@ -1,7 +1,7 @@
 ******************************************************************************
                   MSP430 Linker PC v18.12.4                    
 ******************************************************************************
->> Linked Wed Aug 19 00:01:14 2020
+>> Linked Wed Aug 19 01:49:24 2020
 
 OUTPUT FILE NAME:   <trabalho_sensor_ultrasom.out>
 ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 0000e000
