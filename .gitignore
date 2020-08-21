@@ -4,6 +4,7 @@
 .jxbrowser-data/
 RemoteSystemsTempFiles/.project
 *.workspace
+*.prefs
 
 ## Proteus ##
 *.pdsbak
@@ -14,8 +15,6 @@ RemoteSystemsTempFiles/.project
 *.out
 *.xml
 
-trabalho_pwm/Debug/
-
-
 **/Debug/
 
+**/Debug/!**!.hex
