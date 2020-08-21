@@ -1,9 +1,15 @@
 
+## Code Composer Workspace ##
 .metadata/
 .jxbrowser-data/
-dvt/
-*.d
-*.mk
 RemoteSystemsTempFiles/.project
 *.workspace
+
+## Proteus ##
 *.pdsbak
+
+## Projects Debug Folders ##
+*.obj
+*.map
+*.out
+*.xml
