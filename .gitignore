@@ -13,3 +13,9 @@ RemoteSystemsTempFiles/.project
 *.map
 *.out
 *.xml
+
+trabalho_pwm/Debug/
+
+
+**/Debug/
+
