@@ -84,7 +84,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="05_main_watchdog_display_mux.c|jonas/delay_wdt.c|05_main_simple_timer0_a.c|jj_main_lcd_wdt.c|jj_main_watchdog_simple_gpio.c|jonas/teclado.c|displays/led_display.c|trabalho_lcd_kb.c|main.c|01_main_simple_blink.c|03_main_ext_irq_encoder.c|j_main_lcd.c|prova.c|main_lcd_4_bits.c|jj_main_display_7_seg_mux_func.c|jj_main_display_7_seg_mux.c|03_main_matrix_kb.c|02_main_display_7_seg.c|01_main_simple_gpio.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="jj_main_timer0.c|05_main_watchdog_display_mux.c|jonas/delay_wdt.c|05_main_simple_timer0_a.c|jj_main_lcd_wdt.c|jj_main_watchdog_simple_gpio.c|jonas/teclado.c|displays/led_display.c|trabalho_lcd_kb.c|main.c|01_main_simple_blink.c|03_main_ext_irq_encoder.c|j_main_lcd.c|prova.c|main_lcd_4_bits.c|jj_main_display_7_seg_mux_func.c|jj_main_display_7_seg_mux.c|03_main_matrix_kb.c|02_main_display_7_seg.c|01_main_simple_gpio.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

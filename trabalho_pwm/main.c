@@ -50,7 +50,7 @@ void main(void)
 	init_clock_system();
 	config_timerA_as_pwm();
 
-	P1DIR = 0xFF;
+	//init_clock_systemP1DIR = 0xFF;
 	P1SEL = BIT2 | BIT3;
 
 	P3DIR = 0xFF;

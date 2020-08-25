@@ -32,7 +32,7 @@ void timer_display_mux_write(uint16_t data)
 	_display_data = data;
 }
 
-void timer_display_worker()
+void __inline timer_display_worker()
 {
 	static int8_t counter;
 	static uint16_t data;

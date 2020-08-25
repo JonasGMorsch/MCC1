@@ -9,21 +9,21 @@ CMD_SRCS += \
 ../lnk_msp430f2132.cmd 
 
 C_SRCS += \
-../jj_main_timer0.c 
+../05_main_simple_pwm_4_outputs.c 
 
 C_DEPS += \
-./jj_main_timer0.d 
+./05_main_simple_pwm_4_outputs.d 
 
 OBJS += \
-./jj_main_timer0.obj 
+./05_main_simple_pwm_4_outputs.obj 
 
 OBJS__QUOTED += \
-"jj_main_timer0.obj" 
+"05_main_simple_pwm_4_outputs.obj" 
 
 C_DEPS__QUOTED += \
-"jj_main_timer0.d" 
+"05_main_simple_pwm_4_outputs.d" 
 
 C_SRCS__QUOTED += \
-"../jj_main_timer0.c" 
+"../05_main_simple_pwm_4_outputs.c" 
 
 

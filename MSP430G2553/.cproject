@@ -83,7 +83,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="01_main_simple_gpio.c|jj_main_display_7_seg_mux_func.c|jj_main_display_7_seg_mux.c|displays/watchdog_display_mux.c|jj_main_watchdog_simple_gpio.c|jonas/teclado.c|displays/lcd.c|prova.c|03_main_ext_irq_encoder.c|trabalho_lcd_kb.c|j_main_lcd.c|main_lcd_4_bits.c|03_main_matrix_kb.c|02_main_display_7_seg.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="01_main_simple_blink.c|01_main_simple_gpio.c|jj_main_display_7_seg_mux_func.c|jj_main_display_7_seg_mux.c|displays/watchdog_display_mux.c|jj_main_watchdog_simple_gpio.c|jonas/teclado.c|displays/lcd.c|prova.c|03_main_ext_irq_encoder.c|trabalho_lcd_kb.c|j_main_lcd.c|main_lcd_4_bits.c|03_main_matrix_kb.c|02_main_display_7_seg.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

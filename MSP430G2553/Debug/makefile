@@ -10,7 +10,7 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
-"./01_main_simple_blink.obj" \
+"./05_main_simple_pwm_4_outputs.obj" \
 "./displays/led_display.obj" \
 "./displays/simple_display_mux.obj" \
 "../lnk_msp430g2553.cmd" \
@@ -158,8 +158,8 @@ MSP430G2553.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "01_main_simple_blink.obj" "displays\led_display.obj" "displays\simple_display_mux.obj" 
-	-$(RM) "01_main_simple_blink.d" "displays\led_display.d" "displays\simple_display_mux.d" 
+	-$(RM) "05_main_simple_pwm_4_outputs.obj" "displays\led_display.obj" "displays\simple_display_mux.obj" 
+	-$(RM) "05_main_simple_pwm_4_outputs.d" "displays\led_display.d" "displays\simple_display_mux.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

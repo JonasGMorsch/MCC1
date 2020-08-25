@@ -9,21 +9,21 @@ CMD_SRCS += \
 ../lnk_msp430g2553.cmd 
 
 C_SRCS += \
-../01_main_simple_blink.c 
+../05_main_simple_pwm_4_outputs.c 
 
 C_DEPS += \
-./01_main_simple_blink.d 
+./05_main_simple_pwm_4_outputs.d 
 
 OBJS += \
-./01_main_simple_blink.obj 
+./05_main_simple_pwm_4_outputs.obj 
 
 OBJS__QUOTED += \
-"01_main_simple_blink.obj" 
+"05_main_simple_pwm_4_outputs.obj" 
 
 C_DEPS__QUOTED += \
-"01_main_simple_blink.d" 
+"05_main_simple_pwm_4_outputs.d" 
 
 C_SRCS__QUOTED += \
-"../01_main_simple_blink.c" 
+"../05_main_simple_pwm_4_outputs.c" 
 
 

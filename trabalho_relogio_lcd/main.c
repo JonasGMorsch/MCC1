@@ -16,7 +16,6 @@
 
 void init_clock_system()
 {
-
 	/* Configuração do MCLK em 8MHz */
 
 	// Se calibração foi apagada, para aplicação

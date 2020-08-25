@@ -5,6 +5,20 @@
 #define LED_DEBUG   BIT6
 #define ENCODER_INPUT  BIT7
 
+void init_clock_system()
+{
+	if (CALBC1_8MHZ == 0xFF)
+		while (1)
+		{
+		}
+
+	DCOCTL = 0;
+	BCSCTL1 = CALBC1_8MHZ;
+	DCOCTL = CALDCO_8MHZ;
+
+	BCSCTL3 |= LFXT1S_2; //32768Hz
+}
+
 void config_ext_irq()
 {
     //CLR_BIT(P2DIR,ENCODER_INPUT);
@@ -33,8 +47,7 @@ volatile uint16_t x = 0x0123;
 void main(void)
 {
     WDTCTL = WDTPW | WDTHOLD; //Disable Watchdog
-    BCSCTL3 |= LFXT1S_2; // ACLK = 32768Hz
-
+    init_clock_system();
     timer_display_mux_init(); //Display setup
     config_ext_irq();
 

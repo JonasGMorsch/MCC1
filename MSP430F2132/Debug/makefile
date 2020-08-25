@@ -10,7 +10,7 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
-"./jj_main_timer0.obj" \
+"./05_main_simple_pwm_4_outputs.obj" \
 "./displays/simple_display_mux.obj" \
 "./displays/watchdog_display_mux.obj" \
 "./jonas/lcd.obj" \
@@ -161,8 +161,8 @@ MSP430F2132.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "jj_main_timer0.obj" "displays\simple_display_mux.obj" "displays\watchdog_display_mux.obj" "jonas\lcd.obj" 
-	-$(RM) "jj_main_timer0.d" "displays\simple_display_mux.d" "displays\watchdog_display_mux.d" "jonas\lcd.d" 
+	-$(RM) "05_main_simple_pwm_4_outputs.obj" "displays\simple_display_mux.obj" "displays\watchdog_display_mux.obj" "jonas\lcd.obj" 
+	-$(RM) "05_main_simple_pwm_4_outputs.d" "displays\simple_display_mux.d" "displays\watchdog_display_mux.d" "jonas\lcd.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
