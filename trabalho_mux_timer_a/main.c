@@ -66,7 +66,6 @@ void __attribute__ ((interrupt(asdsd))) dgsfg (void)
 #error Compiler not supported!
 #endif
 {
-    P1OUT ^= LED_DEBUG;
     x++;
     P1IFG &= ~ENCODER_INPUT; //Clear IRQ queue
     timer_display_mux_write(x);

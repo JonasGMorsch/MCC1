@@ -1,6 +1,8 @@
 #include <msp430.h>
 #include <stdint.h>
 
+#include "jonas/motor.h"
+
 void init_clock_system()
 {
 	if (CALBC1_8MHZ == 0xFF)
@@ -15,29 +17,6 @@ void init_clock_system()
 	BCSCTL3 |= LFXT1S_2; //32768Hz
 }
 
-void config_timerA_as_pwm()
-{
-	TA0CCR0 = 8064; // 8mhz/8k = 1khz
-
-	TA0CCTL1 = OUTMOD_7;
-	TA0CCR1 = 4000;
-	TA0CCTL2 = OUTMOD_7;
-	TA0CCR2 = 4500;
-
-	TA0CTL = TASSEL_2 | MC_1 | ID_0; //8mhz Up to CCR0
-
-	//TA0CTL = TASSEL_2 | MC_2 | ID_3; //8mhz Up to CCR0
-
-	/*
-	 TA1CCR0 = 10000;
-
-	 TA1CCTL1 = OUTMOD_2;
-	 TA1CCR1 = 40000;
-
-	 TA1CTL = TASSEL_2 | MC_3 | ID_0;
-	 */
-}
-
 void main(void)
 {
 	WDTCTL = WDTPW | WDTHOLD;
@@ -48,18 +27,38 @@ void main(void)
 #endif
 
 	init_clock_system();
-	config_timerA_as_pwm();
+	motor_init();
 
-	//init_clock_systemP1DIR = 0xFF;
-	P1SEL = BIT2 | BIT3;
-
-	P3DIR = 0xFF;
+	set_motor_pwm(500);
 
 	while (1)
 	{
-		P3OUT ^= BIT1;
+		motor_move(FOWARD);
+		_delay_cycles(2000000);
+
+		motor_move(F_RIGHT);
+		_delay_cycles(2000000);
+
+		motor_move(RIGHT);
+		_delay_cycles(2000000);
+
+		motor_move(B_RIGHT);
+		_delay_cycles(2000000);
+
+		motor_move(BACKWARD);
+		_delay_cycles(2000000);
+
+		motor_move(B_LEFT);
+		_delay_cycles(2000000);
+
+		motor_move(LEFT);
+		_delay_cycles(2000000);
+
+		motor_move(F_LEFT);
+		_delay_cycles(2000000);
+
+		motor_move(STOP);
 		_delay_cycles(8000000);
-		P3OUT ^= BIT0;
 
 		//__bis_SR_register(LPM4_bits); //(SCG1+SCG0+OSCOFF+CPUOFF)
 	}

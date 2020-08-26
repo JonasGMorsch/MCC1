@@ -113,10 +113,13 @@
      <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="39" x="1538" flags="00000008" y="349" h="10" pid="3" iid="1">
+   <POPUP w="289" x="1538" flags="00000008" y="349" h="149" pid="3" iid="1">
     <PROPERTIES/>
    </POPUP>
-   <POPUP w="10" x="1558" flags="00000019" y="369" h="10" pid="6" iid="1">
+   <POPUP w="206" x="1558" flags="00000019" y="369" h="220" pid="6" iid="1">
+    <PROPERTIES/>
+   </POPUP>
+   <POPUP w="290" x="38" flags="00000000" y="129" h="189" pid="0" iid="3">
     <PROPERTIES/>
    </POPUP>
   </PWI>

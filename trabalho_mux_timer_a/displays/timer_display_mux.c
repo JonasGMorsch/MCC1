@@ -24,7 +24,7 @@ void timer_display_mux_init()
 	IE1 |= WDTIE;               //WD IRQ ENABLE*/
 	//P1DIR |= LED_DEBUG;
 
-	TA0CTL = TASSEL_2 | MC_2 | ID_0 | TAIE; // timer pra 8ms
+	TA0CTL = TASSEL_2 | MC_2 | ID_1 | TAIE; 	//8M/2/2^16 = 61Hz
 }
 
 void timer_display_mux_write(uint16_t data)
@@ -91,6 +91,9 @@ void __attribute__ ((interrupt(TIMER0_A1_VECTOR))) TIMER0_A1_ISR (void)
 		// Vector 10:  TAIFG -> Overflow do timer 0
 	case TA0IV_TAIFG:
 		timer_display_worker();
+
+	    P1OUT ^= BIT6;
+	    P1OUT ^= BIT6; // clock measurement
 		break;
 	default:
 		break;
