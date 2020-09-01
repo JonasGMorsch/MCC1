@@ -1,1 +1,1 @@
-"./05_main_simple_pwm_4_outputs.obj" "./displays/simple_display_mux.obj" "./displays/watchdog_display_mux.obj" "./jonas/lcd.obj" "../lnk_msp430f2132.cmd" -llibc.a 
+"./06_main_adc_isr.obj" "./displays/lcd.obj" "../lnk_msp430f2132.cmd" -llibc.a 

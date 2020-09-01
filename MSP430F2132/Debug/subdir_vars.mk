@@ -9,21 +9,21 @@ CMD_SRCS += \
 ../lnk_msp430f2132.cmd 
 
 C_SRCS += \
-../05_main_simple_pwm_4_outputs.c 
+../06_main_adc_isr.c 
 
 C_DEPS += \
-./05_main_simple_pwm_4_outputs.d 
+./06_main_adc_isr.d 
 
 OBJS += \
-./05_main_simple_pwm_4_outputs.obj 
+./06_main_adc_isr.obj 
 
 OBJS__QUOTED += \
-"05_main_simple_pwm_4_outputs.obj" 
+"06_main_adc_isr.obj" 
 
 C_DEPS__QUOTED += \
-"05_main_simple_pwm_4_outputs.d" 
+"06_main_adc_isr.d" 
 
 C_SRCS__QUOTED += \
-"../05_main_simple_pwm_4_outputs.c" 
+"../06_main_adc_isr.c" 
 
 

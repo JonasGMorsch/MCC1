@@ -1,1 +1,1 @@
-"./05_main_simple_pwm_4_outputs.obj" "./displays/led_display.obj" "./displays/simple_display_mux.obj" "../lnk_msp430g2553.cmd" -llibc.a 
+"./displays/led_display.obj" "./displays/simple_display_mux.obj" "../lnk_msp430g2553.cmd" -llibc.a 

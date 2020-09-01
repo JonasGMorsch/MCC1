@@ -10,10 +10,8 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
-"./05_main_simple_pwm_4_outputs.obj" \
-"./displays/simple_display_mux.obj" \
-"./displays/watchdog_display_mux.obj" \
-"./jonas/lcd.obj" \
+"./06_main_adc_isr.obj" \
+"./displays/lcd.obj" \
 "../lnk_msp430f2132.cmd" \
 $(GEN_CMDS__FLAG) \
 -llibc.a \
@@ -27,10 +25,8 @@ RMDIR := RMDIR /S/Q
 -include sources.mk
 -include subdir_vars.mk
 -include displays/subdir_vars.mk
--include jonas/subdir_vars.mk
 -include subdir_rules.mk
 -include displays/subdir_rules.mk
--include jonas/subdir_rules.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -161,8 +157,8 @@ MSP430F2132.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "05_main_simple_pwm_4_outputs.obj" "displays\simple_display_mux.obj" "displays\watchdog_display_mux.obj" "jonas\lcd.obj" 
-	-$(RM) "05_main_simple_pwm_4_outputs.d" "displays\simple_display_mux.d" "displays\watchdog_display_mux.d" "jonas\lcd.d" 
+	-$(RM) "06_main_adc_isr.obj" "displays\lcd.obj" 
+	-$(RM) "06_main_adc_isr.d" "displays\lcd.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

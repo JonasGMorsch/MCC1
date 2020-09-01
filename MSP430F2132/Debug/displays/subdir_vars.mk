@@ -6,27 +6,21 @@ SHELL = cmd.exe
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../displays/simple_display_mux.c \
-../displays/watchdog_display_mux.c 
+../displays/lcd.c 
 
 C_DEPS += \
-./displays/simple_display_mux.d \
-./displays/watchdog_display_mux.d 
+./displays/lcd.d 
 
 OBJS += \
-./displays/simple_display_mux.obj \
-./displays/watchdog_display_mux.obj 
+./displays/lcd.obj 
 
 OBJS__QUOTED += \
-"displays\simple_display_mux.obj" \
-"displays\watchdog_display_mux.obj" 
+"displays\lcd.obj" 
 
 C_DEPS__QUOTED += \
-"displays\simple_display_mux.d" \
-"displays\watchdog_display_mux.d" 
+"displays\lcd.d" 
 
 C_SRCS__QUOTED += \
-"../displays/simple_display_mux.c" \
-"../displays/watchdog_display_mux.c" 
+"../displays/lcd.c" 
 
 
