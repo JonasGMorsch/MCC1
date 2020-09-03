@@ -1,6 +1,8 @@
 #include <msp430.h> 
 
 
+//https://www.ti.com/product/MSP430F2132
+
 /**
  * main.c
  */

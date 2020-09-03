@@ -29,7 +29,7 @@ void init_adc()
 	//ADC10ON   :  ADC10 On/Enable
 	//ADC10IE   :  IRQ Enable
 	//SREF1 // REF+ on P2.4 and REF-=VSS
-
+	//ADC10SR 50 kbps
 	ADC10CTL0 |= SREF1 + ADC10ON + ADC10IE;
 
 	// Input A2

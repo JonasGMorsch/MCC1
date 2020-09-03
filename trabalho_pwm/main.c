@@ -21,15 +21,11 @@ void main(void)
 {
 	WDTCTL = WDTPW | WDTHOLD;
 
-#if defined (__MSP430FR2355__)
-	/* Disable the GPIO power-on default high-impedance mode */
-	PM5CTL0 &= ~LOCKLPM5;
-#endif
 
 	init_clock_system();
 	motor_init();
 
-	set_motor_pwm(500);
+	set_motor_pwm(50);
 
 	while (1)
 	{
@@ -60,6 +56,6 @@ void main(void)
 		motor_move(STOP);
 		_delay_cycles(8000000);
 
-		//__bis_SR_register(LPM4_bits); //(SCG1+SCG0+OSCOFF+CPUOFF)
+		__bis_SR_register(LPM4_bits); //(SCG1+SCG0+OSCOFF+CPUOFF)
 	}
 }
