@@ -6,7 +6,7 @@ main.obj: C:/Development/CCS930/ccs/ccs_base/msp430/include/msp430f2132.h
 main.obj: C:/Development/CCS930/ccs/ccs_base/msp430/include/in430.h
 main.obj: C:/Development/CCS930/ccs/tools/compiler/ti-cgt-msp430_18.12.4.LTS/include/intrinsics.h
 main.obj: C:/Development/CCS930/ccs/tools/compiler/ti-cgt-msp430_18.12.4.LTS/include/intrinsics_legacy_undefs.h
-main.obj: ../lib/gpio.h
+main.obj: C:/Development/CCS930/workspace/trabalho_adc_bateria/jonas/bateria.h
 main.obj: C:/Development/CCS930/ccs/tools/compiler/ti-cgt-msp430_18.12.4.LTS/include/stdint.h
 main.obj: C:/Development/CCS930/ccs/tools/compiler/ti-cgt-msp430_18.12.4.LTS/include/_stdint40.h
 main.obj: C:/Development/CCS930/ccs/tools/compiler/ti-cgt-msp430_18.12.4.LTS/include/sys/stdint.h
@@ -15,6 +15,7 @@ main.obj: C:/Development/CCS930/ccs/tools/compiler/ti-cgt-msp430_18.12.4.LTS/inc
 main.obj: C:/Development/CCS930/ccs/tools/compiler/ti-cgt-msp430_18.12.4.LTS/include/machine/_types.h
 main.obj: C:/Development/CCS930/ccs/tools/compiler/ti-cgt-msp430_18.12.4.LTS/include/machine/_stdint.h
 main.obj: C:/Development/CCS930/ccs/tools/compiler/ti-cgt-msp430_18.12.4.LTS/include/sys/_stdint.h
+main.obj: ../lib/gpio.h
 main.obj: C:/Development/CCS930/workspace/trabalho_adc_bateria/lib/bits.h
 
 ../main.c: 
@@ -23,7 +24,7 @@ C:/Development/CCS930/ccs/ccs_base/msp430/include/msp430f2132.h:
 C:/Development/CCS930/ccs/ccs_base/msp430/include/in430.h: 
 C:/Development/CCS930/ccs/tools/compiler/ti-cgt-msp430_18.12.4.LTS/include/intrinsics.h: 
 C:/Development/CCS930/ccs/tools/compiler/ti-cgt-msp430_18.12.4.LTS/include/intrinsics_legacy_undefs.h: 
-../lib/gpio.h: 
+C:/Development/CCS930/workspace/trabalho_adc_bateria/jonas/bateria.h: 
 C:/Development/CCS930/ccs/tools/compiler/ti-cgt-msp430_18.12.4.LTS/include/stdint.h: 
 C:/Development/CCS930/ccs/tools/compiler/ti-cgt-msp430_18.12.4.LTS/include/_stdint40.h: 
 C:/Development/CCS930/ccs/tools/compiler/ti-cgt-msp430_18.12.4.LTS/include/sys/stdint.h: 
@@ -32,4 +33,5 @@ C:/Development/CCS930/ccs/tools/compiler/ti-cgt-msp430_18.12.4.LTS/include/sys/_
 C:/Development/CCS930/ccs/tools/compiler/ti-cgt-msp430_18.12.4.LTS/include/machine/_types.h: 
 C:/Development/CCS930/ccs/tools/compiler/ti-cgt-msp430_18.12.4.LTS/include/machine/_stdint.h: 
 C:/Development/CCS930/ccs/tools/compiler/ti-cgt-msp430_18.12.4.LTS/include/sys/_stdint.h: 
+../lib/gpio.h: 
 C:/Development/CCS930/workspace/trabalho_adc_bateria/lib/bits.h: 

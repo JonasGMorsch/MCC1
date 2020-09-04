@@ -1,14 +1,8 @@
 #include <jonas/ultrassom.h>
 #include <msp430.h>
 #include <stdint.h>
-#include "../displays/lcd.h"
 
-//#include "lib/bits.h"
-
-//volatile uint16_t overflow = 0;
-volatile uint16_t ultrassom_rise_timestamp = 0;
-//volatile uint16_t fall_timestamp = 0;
-volatile uint8_t ultrassom_cm = 0;
+//https://lastminuteengineers.com/arduino-sr04-ultrasonic-sensor-tutorial/
 
 #define US_TRIGGER BIT0
 #define US_TRIGGER_PORT P1OUT
@@ -16,6 +10,14 @@ volatile uint8_t ultrassom_cm = 0;
 #define US_TRIGGER_SEL P1SEL
 
 #define US_CAPTURE BIT1
+
+volatile uint16_t ultrassom_rise_timestamp = 0;
+volatile uint8_t ultrassom_cm = 0;
+
+uint8_t get_cm()
+{
+	return ultrassom_cm;
+}
 
 void config_timerA_1_ultrassom()
 {
@@ -30,21 +32,13 @@ void config_timerA_1_ultrassom()
 	 * Configura comparador 0 do timer 1 para captura */
 
 	TA1CCTL0 = CAP | CM_3 | SCS | CCIS_0 | CCIE;
-	//TA1CCTL1 = CAP | CM_3 | SCS | CCIS_0 | CCIE;
-
-	//TA0CCR0 = 100; // 8mhz/8k = 1khz
-
-	//TA1CCR1 = 10000;
-
-	//TA0CCTL1 = OUTMOD_7;
 
 	//TA1CTL = TASSEL_2 | MC_2 | TACLR | TAIE;  //8MHZ = 125 nS
-	//TA1CTL = TASSEL_1 | MC_2 | TACLR | TAIE; //32768Hz = 30.51 uS //LESS PROTEUS CPU USAGE
-	//TA1CTL = TASSEL0 | MC_2 | TACLR | TAIE; //32768Hz = 30.51 uS //LESS PROTEUS CPU USAGE
 	TA1CTL = TASSEL0 | MC1 | TACLR | TAIE; //32768Hz = 30.51 uS //LESS PROTEUS CPU USAGE
 
 	US_TRIGGER_DIR |= US_TRIGGER;
 	US_TRIGGER_SEL |= US_CAPTURE;
+
 }
 
 /* ISR0 do Timer A: executado no evento de comparação de captura  */
@@ -57,29 +51,11 @@ __interrupt void TIMER1_A0_ISR(void)
 	}
 	else
 	{
-		//P1OUT ^= BIT0;
-		//fall_timestamp = TA1CCR0;
-		//if (!overflow)
-		//interval = (TA1CCR0 - rise_timestamp)/2;
-
 		//343 * 100 / 32768 =1.04675cm/us ~= 1cm/us
 		// ms *  cm / s^-1
-
 		ultrassom_cm = (TA1CCR0 - ultrassom_rise_timestamp) >> 1;
-
-		//uint8_t string[12];
-		//snprintf(string, 6, "%d", interval/8);
-		//lcd_write_string(string);
-
-
-
-		lcd_send_data(LCD_LINE_0, LCD_CMD);
-		lcd_send_data('0' + ultrassom_cm / 100 % 10, LCD_DATA);
-		lcd_send_data('0' + ultrassom_cm / 10 % 10, LCD_DATA);
-		lcd_send_data('0' + ultrassom_cm % 10, LCD_DATA);
-		lcd_write_string("cm");
+		__bic_SR_register_on_exit(LPM4_bits);
 	}
-
 }
 
 /* ISR1 do Timer A: executado toda a vez que o temporizador estoura, evento do comparador 1 ou evento do comparador 2 */
@@ -107,16 +83,7 @@ __interrupt void TIMER1_A1_ISR(void)
 
 		/* Vector 10:  TAIFG -> Overflow do timer 0*/
 	case TA1IV_TAIFG:
-		//overflow++;
-		//P1OUT ^= BIT0;
-
-		//US_TRIGGER_PORT |= US_TRIGGER;
-		//US_TRIGGER_PORT &= ~US_TRIGGER;
-
-		//TA1CCR1 = 49152;
-
 		//US_TRIGGER_PORT ^= US_TRIGGER;
-
 		break;
 
 	default:

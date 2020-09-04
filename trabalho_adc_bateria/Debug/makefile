@@ -11,7 +11,7 @@ GEN_CMDS__FLAG :=
 
 ORDERED_OBJS += \
 "./main.obj" \
-"./jonas/adc.obj" \
+"./jonas/bateria.obj" \
 "../lnk_msp430f2132.cmd" \
 $(GEN_CMDS__FLAG) \
 -llibc.a \
@@ -157,8 +157,8 @@ trabalho_adc_bateria.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "main.obj" "jonas\adc.obj" 
-	-$(RM) "main.d" "jonas\adc.d" 
+	-$(RM) "main.obj" "jonas\bateria.obj" 
+	-$(RM) "main.d" "jonas\bateria.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
