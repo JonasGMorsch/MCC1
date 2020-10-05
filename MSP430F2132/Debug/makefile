@@ -10,8 +10,9 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
-"./06_main_adc_isr.obj" \
+"./09_main_i2c_single_byte.obj" \
 "./displays/lcd.obj" \
+"./lib/i2c_master_g2553.obj" \
 "../lnk_msp430f2132.cmd" \
 $(GEN_CMDS__FLAG) \
 -llibc.a \
@@ -25,8 +26,10 @@ RMDIR := RMDIR /S/Q
 -include sources.mk
 -include subdir_vars.mk
 -include displays/subdir_vars.mk
+-include lib/subdir_vars.mk
 -include subdir_rules.mk
 -include displays/subdir_rules.mk
+-include lib/subdir_rules.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -157,8 +160,8 @@ MSP430F2132.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "06_main_adc_isr.obj" "displays\lcd.obj" 
-	-$(RM) "06_main_adc_isr.d" "displays\lcd.d" 
+	-$(RM) "09_main_i2c_single_byte.obj" "displays\lcd.obj" "lib\i2c_master_g2553.obj" 
+	-$(RM) "09_main_i2c_single_byte.d" "displays\lcd.d" "lib\i2c_master_g2553.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

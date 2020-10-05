@@ -8,4 +8,22 @@ SHELL = cmd.exe
 CMD_SRCS += \
 ../lnk_msp430g2553.cmd 
 
+C_SRCS += \
+../09_main_i2c_single_byte.c 
+
+C_DEPS += \
+./09_main_i2c_single_byte.d 
+
+OBJS += \
+./09_main_i2c_single_byte.obj 
+
+OBJS__QUOTED += \
+"09_main_i2c_single_byte.obj" 
+
+C_DEPS__QUOTED += \
+"09_main_i2c_single_byte.d" 
+
+C_SRCS__QUOTED += \
+"../09_main_i2c_single_byte.c" 
+
 

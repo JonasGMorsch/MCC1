@@ -1,1 +1,1 @@
-"./06_main_adc_isr.obj" "./displays/lcd.obj" "../lnk_msp430f2132.cmd" -llibc.a 
+"./09_main_i2c_single_byte.obj" "./displays/lcd.obj" "./lib/i2c_master_g2553.obj" "../lnk_msp430f2132.cmd" -llibc.a 

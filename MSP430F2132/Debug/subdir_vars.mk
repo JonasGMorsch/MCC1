@@ -9,21 +9,21 @@ CMD_SRCS += \
 ../lnk_msp430f2132.cmd 
 
 C_SRCS += \
-../06_main_adc_isr.c 
+../09_main_i2c_single_byte.c 
 
 C_DEPS += \
-./06_main_adc_isr.d 
+./09_main_i2c_single_byte.d 
 
 OBJS += \
-./06_main_adc_isr.obj 
+./09_main_i2c_single_byte.obj 
 
 OBJS__QUOTED += \
-"06_main_adc_isr.obj" 
+"09_main_i2c_single_byte.obj" 
 
 C_DEPS__QUOTED += \
-"06_main_adc_isr.d" 
+"09_main_i2c_single_byte.d" 
 
 C_SRCS__QUOTED += \
-"../06_main_adc_isr.c" 
+"../09_main_i2c_single_byte.c" 
 
 

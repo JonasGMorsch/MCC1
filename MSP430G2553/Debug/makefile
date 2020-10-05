@@ -10,6 +10,7 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
+"./09_main_i2c_single_byte.obj" \
 "./displays/led_display.obj" \
 "./displays/simple_display_mux.obj" \
 "../lnk_msp430g2553.cmd" \
@@ -157,8 +158,8 @@ MSP430G2553.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "displays\led_display.obj" "displays\simple_display_mux.obj" 
-	-$(RM) "displays\led_display.d" "displays\simple_display_mux.d" 
+	-$(RM) "09_main_i2c_single_byte.obj" "displays\led_display.obj" "displays\simple_display_mux.obj" 
+	-$(RM) "09_main_i2c_single_byte.d" "displays\led_display.d" "displays\simple_display_mux.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

@@ -1,1 +1,1 @@
-"./displays/led_display.obj" "./displays/simple_display_mux.obj" "../lnk_msp430g2553.cmd" -llibc.a 
+"./09_main_i2c_single_byte.obj" "./displays/led_display.obj" "./displays/simple_display_mux.obj" "../lnk_msp430g2553.cmd" -llibc.a 

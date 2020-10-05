@@ -1,7 +1,7 @@
 ******************************************************************************
                   MSP430 Linker PC v18.12.4                    
 ******************************************************************************
->> Linked Fri Sep  4 09:46:37 2020
+>> Linked Mon Sep 21 12:42:21 2020
 
 OUTPUT FILE NAME:   <trabalho_adc_bateria.out>
 ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 0000e1e0
@@ -54,10 +54,10 @@ section   page    origin      length       input sections
 .text      0    0000e000    0000027a     
                   0000e000    0000007c     rts430_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
                   0000e07c    0000004c                     : lsr16.asm.obj (.text)
-                  0000e0c8    00000044     bateria.obj (.text:ADC10_ISR)
-                  0000e10c    00000044     main.obj (.text:main)
-                  0000e150    00000042     rts430_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
-                  0000e192    0000002c                     : lsl16.asm.obj (.text)
+                  0000e0c8    0000004a     main.obj (.text:main)
+                  0000e112    00000042     rts430_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  0000e154    0000003e     bateria.obj (.text:ADC10_ISR)
+                  0000e192    0000002c     rts430_eabi.lib : lsl16.asm.obj (.text)
                   0000e1be    00000022     main.obj (.text:init_clock_system)
                   0000e1e0    0000001c     rts430_eabi.lib : boot.c.obj (.text:_c_int00_noargs)
                   0000e1fc    00000016     main.obj (.text:TIMER0_A1_ISR)
@@ -136,14 +136,14 @@ MODULE SUMMARY
        Module                       code   ro data   rw data
        ------                       ----   -------   -------
     .\
-       main.obj                     124    2         0      
+       main.obj                     130    2         0      
     +--+----------------------------+------+---------+---------+
-       Total:                       124    2         0      
+       Total:                       130    2         0      
                                                             
     .\jonas\
-       bateria.obj                  100    2         4      
+       bateria.obj                  94     2         4      
     +--+----------------------------+------+---------+---------+
-       Total:                       100    2         4      
+       Total:                       94     2         4      
                                                             
     C:\Development\CCS930\ccs\tools\compiler\ti-cgt-msp430_18.12.4.LTS\lib\rts430_eabi.lib
        copy_decompress_lzss.c.obj   124    0         0      
@@ -202,7 +202,7 @@ address   name
 00000049  ADC10DTC1                     
 000001b4  ADC10MEM                      
 000001bc  ADC10SA                       
-0000e0c8  ADC10_ISR                     
+0000e154  ADC10_ISR                     
 00000057  BCSCTL1                       
 00000058  BCSCTL2                       
 00000053  BCSCTL3                       
@@ -300,7 +300,7 @@ address   name
 0000e282  __TI_Handler_Table_Base       
 0000e286  __TI_Handler_Table_Limit      
 0000e25a  __TI_ISR_TRAP                 
-0000e150  __TI_auto_init_nobinit_nopinit
+0000e112  __TI_auto_init_nobinit_nopinit
 0000e000  __TI_decompress_lzss          
 0000e226  __TI_decompress_none          
 0000ffe4  __TI_int02                    
@@ -368,7 +368,7 @@ ffffffff  __c_args__
 0000e26e  get_vbat_top                  
 0000e212  init_adc                      
 0000e1be  init_clock_system             
-0000e10c  main                          
+0000e0c8  main                          
 0000e238  memcpy                        
 00000202  vbat_bottom                   
 00000200  vbat_top                      
@@ -496,9 +496,9 @@ address   name
 0000e0ba  __mspabi_srli_3               
 0000e0be  __mspabi_srli_2               
 0000e0c2  __mspabi_srli_1               
-0000e0c8  ADC10_ISR                     
-0000e10c  main                          
-0000e150  __TI_auto_init_nobinit_nopinit
+0000e0c8  main                          
+0000e112  __TI_auto_init_nobinit_nopinit
+0000e154  ADC10_ISR                     
 0000e192  __mspabi_slli                 
 0000e19e  __mspabi_slli_15              
 0000e1a0  __mspabi_slli_14              
