@@ -6,8 +6,8 @@
  *      Instituto Federal de Santa Catarina
  */
 
-#ifndef LIB_UART_G2553_H_
-#define LIB_UART_G2553_H_
+#ifndef LIB_UART_F2132_H_
+#define LIB_UART_F2132_H_
 
 #include <stdint.h>
 
@@ -19,4 +19,4 @@ void uart_receive_package(uint8_t *data, uint8_t size);
 
 void uart_send_data_pooling(uint8_t byte);
 
-#endif /* LIB_UART_G2553_H_ */
+#endif /* LIB_UART_F2132_H_ */

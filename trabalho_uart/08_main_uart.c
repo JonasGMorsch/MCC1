@@ -1,27 +1,13 @@
-#include <lib/uart_g2553.h>
 #include <msp430.h>
 #include <stdint.h>
 
 /* Project includes */
+#include "lib/uart_f2132.h"
 #include "lib/bits.h"
+#include "jonas/motor.h"
 
-/*
- #ifndef __MSP430G2553__
- #error "Clock system not supported for this device"
- #endif
- */
-
-/**
- * @brief  Configura sistema de clock para usar o Digitally Controlled Oscillator (DCO).
- *         Utililiza-se as calibrações internas gravadas na flash.
- *         Exemplo baseado na documentação da Texas: msp430g2xxx3_dco_calib.c  *
- * @param  none
- *
- * @retval none
- */
 void init_clock_system()
 {
-
 #ifdef CLOCK_16MHz
 	//Se calibração foi apagada, para aplicação
 	if (CALBC1_16MHZ == 0xFF)
@@ -31,16 +17,10 @@ void init_clock_system()
 	BCSCTL1 = CALBC1_16MHZ;
 	DCOCTL = CALDCO_16MHZ;
 #endif
-
 }
 
 int main()
 {
-	uint8_t message[] = "R";
-
-	uint8_t test[] = "RR";
-	//const char message_bin_data[] = { 65, 63, 87, 87};
-
 	char my_data[8];
 
 	/* Desliga Watchdog */
@@ -50,27 +30,37 @@ int main()
 	init_clock_system();
 	init_uart();
 
+	motor_init();
+	set_motor_pwm(50);
+
 	/* Led de depuração */
 	P1DIR |= BIT0;
 
 	while (1)
 	{
-		/* Configura o recebimento de um pacote de 4 bytes */
-		//uart_receive_package((uint8_t *)my_data, 4);
-		/* Desliga a CPU enquanto pacote não chega */
-		//__bis_SR_register(CPUOFF | GIE);
-		/* Envia resposta */
-		//uart_send_package((uint8_t *)message,sizeof(message));
-		//uart_send_package((uint8_t *)message,sizeof(message));
+		uart_receive_package((uint8_t *) my_data, 4);
 
-		//uart_send_data_pooling(test[0]);
-		/*
-		 uart_send_package((uint8_t *)message,sizeof(message));
+		__bis_SR_register(CPUOFF | GIE);
 
-
-		 uart_send_package((uint8_t *)message,sizeof(message));*/
-
-		/* Pisca LED para sinalizar que dados chegaram */
+		for (uint8_t i=0 ; sizeof(my_data) > i; i++)
+		{
+			if(my_data[i] == 'F')
+			{
+				motor_move(FOWARD);
+			}
+			if(my_data[i] == 'B')
+			{
+				motor_move(BACKWARD);
+			}
+			if(my_data[i] == 'R')
+			{
+				motor_move(RIGHT);
+			}
+			if(my_data[i] == 'L')
+			{
+				motor_move(LEFT);
+			}
+		}
 		CPL_BIT(P1OUT, BIT0);
 	}
 }
