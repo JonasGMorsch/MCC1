@@ -36,12 +36,11 @@ int main(void)
 	set_motor_pwm(100);
 	init_adc();
 
-
 	WDTCTL = WDT_ADLY_250;      //WD TIMER TO X TIME
 	IE1 |= WDTIE;               //WD IRQ ENABLE
 
 	P3DIR |= BIT2;  //BAT_PROTECTION
-	P3DIR |=  BIT3; //US_TRIGGER
+	P3DIR |= BIT3; //US_TRIGGER
 
 	__bis_SR_register(GIE);
 
@@ -88,6 +87,10 @@ int main(void)
 		else if (uart_command == 'L')
 		{
 			motor_move(LEFT);
+		}
+		else if (uart_command == 'S')
+		{
+			motor_move(STOP);
 		}
 		////////////////////////////////////////////////////////
 

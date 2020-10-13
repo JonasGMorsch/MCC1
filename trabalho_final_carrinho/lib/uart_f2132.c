@@ -26,13 +26,8 @@ void init_uart()
 	P3SEL = BIT4 | BIT5; //P3.4 TX --- P3.5 RX
 
 
-#ifdef CLOCK_1MHz
-	// Fonte de clock da UART: SMCLK
-	UCA0CTL1 |= UCSSEL_2;
-	// Configuração de clock: ver página 424 do MSP430G2553 Family Guide
-	UCA0BR0 = 104;
-	UCA0BR1 = 0;
-#elif defined CLOCK_16MHz
+
+#ifdef CLOCK_8MHz
 	// Fonte de clock da UART: SMCLK
 	UCA0CTL1 |= UCSSEL_2;
 	// Configuração de clock: ver página 424 do MSP430G2553 Family Guide
@@ -46,7 +41,7 @@ void init_uart()
 	UCA0CTL1 &= ~UCSWRST;
 
 	// Reset dirty flags
-	//IFG2 &= ~(UCA0TXIFG | UCA0RXIFG);
+	IFG2 &= ~(UCA0TXIFG | UCA0RXIFG);
 	// Habilitação da ISR
 	IE2 |= UCA0RXIE | UCA0TXIE;
 }
