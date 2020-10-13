@@ -2,7 +2,11 @@
 
 ## Trabalho Final
 
+O MSP Utilizado como base foi o MSP430F2132 à 8MHZ, pela maior facilidade de simulação.
+
 Considerações: O Trabalho está imcompleto, por falta no material nescessário para executar os testes, assim como problemas de simulação.
+
+
 
 Atualmente o código está atendendo os seguintes quesitos:
 
